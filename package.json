@@ -2,11 +2,11 @@
   "name": "blog-hub",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "listen": "nodemon server",
-    "test": "jest"
+    "test": "jest",
+    "start": "node server.js",
+    "listen": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -27,8 +27,5 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0"
-  },
-  "devDependencies": {
-    "jest": "^27.5.1"
   }
 }

@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
 class User extends Model {
     checkPassword(pwInput) {
@@ -31,20 +32,20 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [7] //password with a minimum of 7 characters
+                len: [7] //password with a minimum length of 7 characters
               }
         }
     },
-    {
+    { 
         hooks: {
-            async hashPwCreate(newUser) {
-                newUser.password = await bcrypt.hash(newUser.password, 10);
-                return newUser;
-            },
-            async hashPwUpdate(updtUser) {
-                updtUser.password = await bcrypt.hash(updtUser.password, 10);
-                return updtUser;
-            }
+          async beforeCreate(newUser) {
+            newUser.password = await bcrypt.hash(newUser.password, 10);
+              return newUser;
+          },
+          async beforeUpdate(updtUser) {
+            updtUser.password = await bcrypt.hash(updtUser.password, 10);
+              return updtUser;
+          }
         },
         sequelize,
         timestamps: false,
