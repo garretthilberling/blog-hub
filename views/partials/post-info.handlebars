@@ -1,0 +1,11 @@
+<article class="bg-sky-50 rounded-lg shadow-2xl m-8">
+      <div class="">
+        <a href="{{post_body}}" target="_blank">{{title}}</a>
+      <div class="">
+        by {{user.username}} on
+        {{format_date created_at}}
+        |
+        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+      </div>
+      </div>
+    </article>

@@ -1,31 +1,43 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog->HUB</title>
-</head>
+    <link href="/stylesheets/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
 
-<body>
+  <body class="bg-cyan-200">
     <div>
-        <header>
-            <h1>
-                <a href="/">Blog->HUB</a>
-            </h1>
-            <nav>
-                {{#if loggedIn}}
-                <a href="/dashboard">dashboard</a>
-                <button id="logout">logout</button>
-                {{else}}
-                <a href="/login">login</a>
-                {{/if}}
-            </nav>
-        </header>
-        <main>
-            {{{body}}}
-        </main>
+      <header class="bg-sky-600 flex flex-row items-center justify-between flex-wrap p-5">
+          <div>
+            <a href="/" class="font-semibold text-xl tracking-tight text-white mx-3">Blog <i class="fas fa-arrow-right fa-spin" style="--fa-animation-duration:4.5s"></i> HUB</a>
+          </div>
+
+        <nav class="navigation">
+            {{!-- {{#if loggedIn}} --}}
+            {{!-- <a href="/dashboard" class="bg-sky-400 hover:bg-sky-300 text-white font-bold py-2 px-2 mx-1 my-1 rounded border-b-4 border-sky-700">dashboard</a> --}}
+            <button
+              id="logout"
+              class="bg-sky-400 hover:bg-sky-300 text-white font-bold py-2 my-1 px-2 mx-1 rounded border-b-4 border-sky-700"
+            >logout</button>
+            {{!-- {{else}} --}}
+            <a
+              href="/login"
+              class="bg-sky-400 hover:bg-sky-300 text-white font-bold py-2 my-1 px-2 mx-1 rounded border-b-4 border-sky-700"
+            >login</a>
+            {{!-- {{/if}} --}}
+        </nav>
+      </header>
+      <main class="flex center-items justify-center">
+        {{{body}}}
+      </main>
     </div>
-    
-</body>
+
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+  </body>
 </html>
