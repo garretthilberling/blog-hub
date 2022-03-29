@@ -487,6 +487,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.25rem;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -519,6 +527,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.5rem;
 }
 
+.rounded-t-lg {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
 .border-b-4 {
   border-bottom-width: 4px;
 }
@@ -543,23 +556,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(56 189 248 / var(--tw-bg-opacity));
 }
 
-.bg-cyan-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(207 250 254 / var(--tw-bg-opacity));
-}
-
-.bg-cyan-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 254 255 / var(--tw-bg-opacity));
-}
-
 .bg-sky-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(240 249 255 / var(--tw-bg-opacity));
 }
 
+.bg-sky-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(3 105 161 / var(--tw-bg-opacity));
+}
+
 .p-5 {
   padding: 1.25rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .py-2 {
@@ -570,6 +582,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 
 .text-xl {
@@ -594,6 +620,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-sky-50 {
+  --tw-text-opacity: 1;
+  color: rgb(240 249 255 / var(--tw-text-opacity));
+}
+
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -603,4 +634,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-sky-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(125 211 252 / var(--tw-bg-opacity));
+}
+
+.hover\:text-sky-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(125 211 252 / var(--tw-text-opacity));
 }
