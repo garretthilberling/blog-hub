@@ -4,6 +4,7 @@ const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
+    const random = '';
     Post.findAll({
         attributes: ['id','title', 'post_body', 'created_at'],
         include: [
@@ -15,13 +16,12 @@ router.get('/', (req, res) => {
     })
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        const user = dbPostData.map(user => user.get({ plain: true }));
-
-        if (withAuth) {
+        
+        if(withAuth) {
             res.render('homepage', {
-                user,
+                user: req.session.username,
                 posts,
-                loggedIn: req.session.loggedIn,
+                loggedIn: req.session.loggedIn
             });
         } else {
             res.render('homepage', {
