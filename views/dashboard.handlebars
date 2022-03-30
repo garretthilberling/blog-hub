@@ -1,33 +1,35 @@
-<section>
-    <h2 class="flex justify-center text-xl font-semibold my-5">Create New Post</h2>
-    <div>
-        <form class="bg-sky-400 rounded-lg shadow-2xl m-5">
-            <div class="bg-sky-700 text-sky-50 rounded-t-lg py-5 px-8 flex justify-center">
-                <label class="px-2" for="post-title">Title</label>
-                <textarea class="px-2 text-black" type="text" id="post-title" name="post-title" rows="1" cols="70"></textarea>
-            </div>
-            <div>
-                <textarea class="text-black p-2" id="post-body" name="post-body" rows="4" cols="100" placeholder="Enter Blog Contents"></textarea>
-            </div>
-            <div class="flex justify-center font-semibold">
-                <button class="hover:text-sky-800" type="submit">Create</button>
-            </div>
-        </form>
-    </div>
-</section>
+<div class="flex center-items justify-center">
+    <section>
+        <h2 class="flex justify-center text-xl font-semibold my-5">Create New Post</h2>
+        <div>
+            <form class="bg-sky-400 rounded-lg shadow-2xl m-5">
+                <div class="bg-sky-700 text-sky-50 rounded-t-lg py-5 px-8 flex justify-center">
+                    <label class="px-2" for="post-title">Title</label>
+                    <textarea class="px-2 text-black" type="text" id="post-title" name="post-title" rows="1" cols="70"></textarea>
+                </div>
+                <div>
+                    <textarea class="text-black p-2" id="post-body" name="post-body" rows="4" cols="100" placeholder="Enter Blog Contents"></textarea>
+                </div>
+                <div class="flex justify-center font-semibold">
+                    <button id="create" class="hover:text-sky-800" type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
-{{#if posts.length}}
-<section>
-    <h2>Your Posts</h2>
-    <ol>
-        {{#each posts as |post|}}
-        <li>
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="">Edit post</a>
-        </li>
-        {{/each}}
-    </ol>
-</section>
-{{/if}}
+    {{#if posts.length}}
+    <section>
+        <h2>Your Posts</h2>
+        <ol>
+            {{#each posts as |post|}}
+            <li>
+                {{> post-info post}}
+                <a href="/dashboard/edit/{{post.id}}" class="">Edit post</a>
+            </li>
+            {{/each}}
+        </ol>
+    </section>
+    {{/if}}
+</div>
 
 <script src="/javascript/add-post.js"></script>

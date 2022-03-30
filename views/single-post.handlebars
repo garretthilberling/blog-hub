@@ -1,0 +1,25 @@
+{{> post-info post}}
+
+
+{{#if loggedIn}}
+<div class="flex flex-wrap justify-center">
+    <article class="m-8">
+        <form class="" id="comment-form">
+            <div class="m-2">
+                <textarea class="border-4 border-sky-700 rounded text-black p-2" placeholder="Write your comment here"></textarea>
+            </div>
+
+            <div class="m-2">
+                <button class="bg-sky-400 hover:bg-sky-300 text-white font-bold py-2 my-1 px-2 mx-1 rounded border-b-4 border-sky-700 flex justify-center" type="submit">add comment</button>
+            </div>
+        </form>
+    </article>
+</div>
+{{/if}}
+<div class="flex justify-center">
+    {{> comments post.comments}}
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
