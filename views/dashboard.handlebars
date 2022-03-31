@@ -1,8 +1,8 @@
 <div class="flex center-items justify-center">
     <section>
-        <h2 class="flex justify-center text-xl font-semibold my-5">Create New Post</h2>
+        <h2 class="flex justify-center text-3xl text-sky-600 font-semibold my-5">Create New Post</h2>
         <div>
-            <form class="bg-sky-400 rounded-lg shadow-2xl m-5">
+            <form id="create" class="bg-sky-400 rounded-lg shadow-xl m-5">
                 <div class="bg-sky-700 text-sky-50 rounded-t-lg py-5 px-8 flex justify-center">
                     <label class="px-2" for="post-title">Title</label>
                     <textarea class="px-2 text-black" type="text" id="post-title" name="post-title" rows="1" cols="70"></textarea>
@@ -11,25 +11,37 @@
                     <textarea class="text-black p-2" id="post-body" name="post-body" rows="4" cols="100" placeholder="Enter Blog Contents"></textarea>
                 </div>
                 <div class="flex justify-center font-semibold">
-                    <button id="create" class="hover:text-sky-800" type="submit">Create</button>
+                    <button id="" class="hover:text-sky-800" type="submit">Create</button>
                 </div>
             </form>
         </div>
     </section>
+</div>
 
-    {{#if posts.length}}
-    <section>
-        <h2>Your Posts</h2>
+{{#if posts.length}}
+<div class="items-center flex justify-center">
+    <h2 class="font-semibold mt-7 mb-1 text-sky-700 my-2 px-2 py-2 text-3xl">Your Posts:</h2>
+</div>
+<div class="flex center-items justify-center">
+    <section class="flex justify-center">
         <ol>
             {{#each posts as |post|}}
-            <li>
-                {{> post-info post}}
-                <a href="/dashboard/edit/{{post.id}}" class="">Edit post</a>
+            <li class="flex flex-wrap flex-row items-center">
+                <div>
+                    <div class="flex my-5">
+                        <a href="/dashboard/edit/{{post.id}}"><i class="fa-solid fa-pen-to-square text-sky-700 hover:text-sky-500 text-2xl"></i></a>
+                    </div>
+                    <div class="flex my-5">
+                        <button id="delete-post-btn"><i class="fa fa-trash text-red-500 hover:text-red-300 text-2xl" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <div>{{> post-info post}}</div>
             </li>
             {{/each}}
         </ol>
     </section>
-    {{/if}}
 </div>
+{{/if}}
 
 <script src="/javascript/add-post.js"></script>
+<script src="/javascript/delete-post.js"></script>

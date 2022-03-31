@@ -1,14 +1,14 @@
-<div class="flex center-items justify-center">
+<div class="flex items-center justify-center">
   <article class="bg-sky-50 rounded-lg shadow-xl m-8">
         <div class="bg-sky-700 text-sky-50 rounded-t-lg py-5 px-8 flex flex-row items-center justify-between flex-wrap">
             <div>
-              <span class="mr-2">{{user.username}}</span>  |  
-              <span class="ml-2">{{format_date created_at}}</span>
+              {{user.username}} <span class="mx-4">|</span>  
+              {{format_date created_at}}
             </div>
             <div>
             </div>
             <div>
-              <a href="/post/{{id}}" class="hover:text-sky-300">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+              <span class="mx-4">|</span><a href="/post/{{id}}" class="hover:text-sky-300">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             </div>
         </div>
         

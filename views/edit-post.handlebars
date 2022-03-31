@@ -1,20 +1,58 @@
-<article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
-    <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <span>({{post.post_body}})</span>
+<article class="flex flex-col center-items justify-center">
+  <div class="flex justify-start text-3xl text-sky-600 font-semibold my-5">
+    <div class="mx-6">
+      <a href="/dashboard"> &larr; Back to dashboard</a>
     </div>
-    <div>
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+  </div>
+</article>
+<div class="flex center-items justify-center">
+  <section>
+    <h2
+      class="flex justify-center text-3xl text-sky-600 font-semibold my-5"
+    >Edit Post</h2>
+    <div class="grid grid-flow-col">
+        <div class="flex flex-wrap flex-row items-center">
+          <div>
+              <div class="flex my-5">
+                  <a href="/dashboard/edit/{{post.id}}"><i id="edit-post" class="fas fa-save text-sky-700 hover:text-sky-500 text-2xl"></i></a>
+              </div>
+              <div class="flex my-5">
+                  <button id="delete-post-btn"><i class="fa fa-trash text-red-500 hover:text-red-300 text-2xl" aria-hidden="true"></i></button>
+              </div>
+          </div>
+      </div>
+      <div class="">
+        <form class="bg-sky-400 rounded-lg shadow-xl m-5">
+          <div
+            class="bg-sky-700 text-sky-50 rounded-t-lg py-5 px-8 flex justify-center"
+          >
+            <label class="px-2" for="post-title">Title</label>
+            <input
+              class="px-2 text-black"
+              name="post-title"
+              type="text"
+              value="{{post.title}}"
+            />
+          </div>
+          <div>
+            <textarea
+              name="post-body"
+              rows="4"
+              cols="100"
+              placeholder="Enter Blog Contents"
+            >{{post.post_body}}</textarea>
+          </div>
+          <div class="flex justify-end px-2 text-sky-900 hover:text-sky-600">
+            <a href="/post/{{post.id}}">{{post.comments.length}}
+              {{format_plural "comment" post.comments.length}}</a>
+          </div>
+        </form>
+      </div>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
-  </form>
-  <form class="comment-form">
+  </section>
+</div>
+
+<form class="flex center-items justify-center">
   <div>
     <textarea name="comment-body"></textarea>
   </div>
@@ -23,7 +61,6 @@
     <button type="submit">add comment</button>
   </div>
 </form>
-</article>
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>

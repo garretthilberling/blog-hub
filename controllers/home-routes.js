@@ -4,7 +4,6 @@ const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-    const random = '';
     Post.findAll({
         attributes: ['id','title', 'post_body', 'created_at'],
         include: [
@@ -17,18 +16,11 @@ router.get('/', (req, res) => {
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
         
-        if(withAuth) {
             res.render('homepage', {
                 user: req.session.username,
                 posts,
                 loggedIn: req.session.loggedIn
             });
-        } else {
-            res.render('homepage', {
-                posts,
-                loggedIn: req.session.loggedIn
-            });
-        }
     })
     .catch(err => {
         console.log(err);
@@ -81,8 +73,9 @@ include: [
 
     //pass data to template
     res.render('single-post', {
-    post, 
-    loggedIn: req.session.loggedIn
+        user: req.session.username,
+        post, 
+        loggedIn: req.session.loggedIn
     });
 })
 .catch(err => {
