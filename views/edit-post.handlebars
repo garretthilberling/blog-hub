@@ -1,7 +1,7 @@
 <article class="flex flex-col center-items justify-center">
   <div class="flex justify-start text-3xl text-sky-600 font-semibold my-5">
     <div class="mx-6">
-      <a href="/dashboard"> &larr; Back to dashboard</a>
+      <a href="/dashboard" class="hover:text-sky-400"><i class="fa-solid fa-angle-left"></i> Back to dashboard</a>
     </div>
   </div>
 </article>
@@ -11,7 +11,7 @@
       class="flex justify-center text-3xl text-sky-600 font-semibold my-5"
     >Edit Post</h2>
     <div class="grid grid-flow-col">
-        <div class="flex flex-wrap flex-row items-center">
+        <div class="flex flex-wrap flex-row items-center mr-3">
           <div>
               <div class="flex my-5">
                   <a href="/dashboard/edit/{{post.id}}"><i id="edit-post" class="fas fa-save text-sky-700 hover:text-sky-500 text-2xl"></i></a>
@@ -29,14 +29,14 @@
             <label class="px-2" for="post-title">Title</label>
             <input
               class="px-2 text-black"
-              name="post-title"
+              id="post-title"
               type="text"
               value="{{post.title}}"
             />
           </div>
           <div>
             <textarea
-              name="post-body"
+              id="post-body"
               rows="4"
               cols="100"
               placeholder="Enter Blog Contents"
@@ -52,15 +52,19 @@
   </section>
 </div>
 
-<form class="flex center-items justify-center">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
+<div class="flex flex-wrap justify-center items-center">
+  <article class="m-8">
+    <form id="comment-form">
+        <div class="m-2">
+            <textarea class="border-0 border-sky-300 rounded text-black p-2" placeholder="Write your comment here"></textarea>
+        </div>
 
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
+        <div class="m-2">
+            <button class="bg-sky-400 hover:bg-sky-300 text-white font-bold py-2 my-1 px-2 mx-1 rounded border-b-4 border-sky-700 flex justify-center" type="submit">add comment</button>
+        </div>
+    </form>
+  </article>
+</div>
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>

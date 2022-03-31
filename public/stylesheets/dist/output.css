@@ -476,6 +476,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 1.25rem;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -533,6 +537,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-7 {
   margin-top: 1.75rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .flex {
