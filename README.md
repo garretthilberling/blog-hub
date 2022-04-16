@@ -18,7 +18,7 @@ Users can login, create an account, create a post, edit or delete their posts, a
 No installation required! Access via the deployed Heroku URL: https://blueberry-cupcake-82652.herokuapp.com/
 
 ## Questions
-If you have any questions about this project, please contact us via GitHub: 
+If you have any questions about this project, please contact me via GitHub: 
 * [Garrett Hilberling](https://github.com/garretthilberling)
 
 ## Credits
